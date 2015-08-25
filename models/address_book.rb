@@ -59,8 +59,8 @@ class AddressBook
       if entry.name == name
         return entry
       end
-      return nil
     end
+    return nil
   end
 
 end
