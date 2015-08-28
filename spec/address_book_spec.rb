@@ -45,7 +45,7 @@ RSpec.describe AddressBook do
       book.import_from_csv("entries.csv")
       book_size = book.entries.size
 
-      expect(book_size).to eql 5
+      expect(book_size).to eq 5
     end
 
     it "imports the 1st entry" do
@@ -182,4 +182,11 @@ RSpec.describe AddressBook do
     end
   end
 
+  context "nuke deletes all entries" do
+    it "deletes all entries" do
+      book.import_from_csv("entries.csv")
+      book.nuke
+      expect(book.entries.count).to eq 0
+    end
+  end
 end

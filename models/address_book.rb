@@ -8,6 +8,12 @@ class AddressBook
     @entries = []
   end
 
+  def nuke
+    until @entries.count < 1
+      @entries.each {|entry| @entries.delete(entry)}
+    end
+  end
+
   def add_entry(name, phone, email)
 
     index = 0
